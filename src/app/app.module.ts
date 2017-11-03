@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { ClarityModule } from "clarity-angular";
 
 import { AppComponent } from './app.component';
 import { WelcomeComponent } from './welcome/welcome.component';
@@ -20,7 +21,8 @@ import { EditPlayerComponent } from './edit-player/edit-player.component';
     EditPlayerComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    ClarityModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
