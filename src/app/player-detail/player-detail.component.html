@@ -1,3 +1,5 @@
-<p>
-  player-detail works!
-</p>
+<div>
+  <h3>{{(playerToDisplay | async).name}}</h3>
+  <h4>{{(playerToDisplay | async).country}}</h4>
+  <p>{{(playerToDisplay | async).rating}}</p>
+</div>

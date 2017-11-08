@@ -1,0 +1,42 @@
+{ "players": [{
+    "name": "Ke Jie",
+    "country": "China",
+    "rating": "1"
+    }, {
+    "name": "Park Junghwan",
+    "country": "South Korea",
+    "rating": "2"
+    }, {
+    "name": "Shin Jinseo",
+    "country": "South Korea",
+    "rating": "3"
+    }, {
+    "name": "Iyama Yuta",
+    "country": "Japan",
+    "rating": "4"
+    }, {
+    "name": "Mi Yuting",
+    "country": "China",
+    "rating": "5"
+    }, {
+    "name": "Kim Jiseok",
+    "country": "South Korea",
+    "rating": "6"
+    }, {
+    "name": "Shi Yue",
+    "country": "China",
+    "rating": "7"
+    }, {
+    "name": "Lian Xiao",
+    "country": "China",
+    "rating": "8"
+    }, {
+    "name": "Gu Zihao",
+    "country": "China",
+    "rating": "9"
+    }, {
+    "name": "Tuo Jiaxi",
+    "country": "China",
+    "rating": "10"
+    }]
+}
