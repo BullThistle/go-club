@@ -1,29 +1,33 @@
 <form>
-    <section class="form-block">
-        <label>Add New Player to List</label>
-        <div class="form-group">
-            <label>Player Name:</label>
-            <input #newName type="text" placeholder="Enter Player Name" size="45">
-        </div>
-        <div class="form-group">
-            <label>Player Country:</label>
-            <input #newCountry type="text" placeholder="Enter Player Country" size="45">
-        </div>
-        <div class="form-group">
-            <label>Player Ranking:</label>
-            <input #newRanking type="text" placeholder="Enter Enter Player Ranking" size="20">
-        </div>
-        <button (click)="submitForm(newPlayer.value, newCountry.value, newRanking.value); newPlayer.value=''; newCountry.value=''; newRanking.value=''" class="btn btn-primary">Add</button>
-    </section>
+  <section class="form-block">
+    <label>Add New Player to List</label>
+    <div class="form-group">
+      <label>Player Name:</label>
+      <input #newName type="text" placeholder="Enter Player Name" size="45">
+    </div>
+    <div class="form-group">
+      <label>Player Rating:</label>
+      <input #newRating type="text" placeholder="Enter Player Rating" size="45">
+    </div>
+    <div class="form-group">
+      <label>Player Country:</label>
+      <input #newCountry type="text" placeholder="Enter Player Country" size="45">
+    </div>
+    <button (click)="submitForm(newName.value, newCountry.value, newRating.value); newName.value=''; newCountry.value=''; newRating.value=''" class="btn btn-primary">Add</button>
+  </section>
 </form>
 
 <clr-datagrid>
-    <clr-dg-column [clrDgField]="'name'">Player</clr-dg-column>
-    <clr-dg-column [clrDgField]="'rating'">Ranking</clr-dg-column>
-    <clr-dg-column [clrDgField]="'country'">Country</clr-dg-column>
-    <clr-dg-row *clrDgItems="let player of players | async">
-        <clr-dg-cell>{{player.name}}</clr-dg-cell>
-        <clr-dg-cell>{{player.rating}}</clr-dg-cell>
-        <clr-dg-cell>{{player.country}}<button class="btn btn-primary right" (click)="goToDetailPage(player)">View</button></clr-dg-cell>
-    </clr-dg-row>
+  <clr-dg-column [clrDgField]="'name'">Player</clr-dg-column>
+  <clr-dg-column [clrDgField]="'rating'">Ranking</clr-dg-column>
+  <clr-dg-column [clrDgField]="'country'">Country</clr-dg-column>
+  <clr-dg-column [clrDgField]="'edit'">Edit</clr-dg-column>
+  <clr-dg-column [clrDgField]="'delete'">Delete</clr-dg-column>
+  <clr-dg-row *clrDgItems="let player of players | async">
+    <clr-dg-cell>{{player.name}}</clr-dg-cell>
+    <clr-dg-cell>{{player.rating}}</clr-dg-cell>
+    <clr-dg-cell>{{player.country}}</clr-dg-cell>
+    <clr-dg-cell><button class="btn btn-primary" (click)="goToEditPage(player)">Edit</button></clr-dg-cell>
+    <clr-dg-cell><button class="btn btn-primary" (click)="beginDeletingPlayer(player)">Delete</button></clr-dg-cell>
+  </clr-dg-row>
 </clr-datagrid>

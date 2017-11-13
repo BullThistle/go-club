@@ -9,7 +9,7 @@
 
 <clr-datagrid>
     <clr-dg-column [clrDgField]="'name'">Player</clr-dg-column>
-    <clr-dg-column [clrDgField]="'rating'">Ranking</clr-dg-column>
+    <clr-dg-column [clrDgField]="'rating'">Rating</clr-dg-column>
     <clr-dg-column [clrDgField]="'country'">Country</clr-dg-column>
     <clr-dg-row *clrDgItems="let player of players | async">
         <clr-dg-cell>{{player.name}}</clr-dg-cell>

@@ -1,3 +1,19 @@
-<p>
-  edit-player works!
-</p>
+<h1>Edit Player</h1>
+<form [formGroup]="playerForm" (ngSubmit)="beginUpdatingPlayer(playerForm.value)">
+  <section class="form-block">
+    <div class="form-group">
+      <label>Player Name:</label>
+      <input type="text" size="45" formControlName="name" value="{{(playerToUpdate | async).name}}">
+    </div>
+    <div class="form-group">
+      <label>Player Rating:</label>
+      <input type="text" size="45" formControlName="rating" value="{{(playerToUpdate | async).rating}}">
+    </div>
+    <div class="form-group">
+      <label>Player Country:</label>
+      <input type="text" size="45" formControlName="country" value="{{(playerToUpdate | async).country}}">
+    </div>
+    <button type="submit" class="btn btn-primary" value="Update">Update</button>
+    <button class="btn btn-primary" (click)="goToAdminPage()">Back</button>
+  </section>
+</form>

@@ -21,8 +21,18 @@ export class AdminComponent implements OnInit {
   }
 
   submitForm(name: string, country: string, rating: number) {
-    var newPlayer: Player = new Player(name, country, rating);
+    let newPlayer: Player = new Player(name, country, rating);
     this.playerService.addPlayer(newPlayer);
+  }
+  
+  beginDeletingPlayer(localPlayerToDelete){
+    if(confirm("Are you sure you want to delete this player?")){
+      this.playerService.deletePlayer(localPlayerToDelete);
+    }
+  }
+  
+  goToEditPage(clickedPlayer) {
+    this.router.navigate(['edit', clickedPlayer.$key]);
   }
 
 }

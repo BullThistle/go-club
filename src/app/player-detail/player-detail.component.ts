@@ -20,8 +20,8 @@ export class PlayerDetailComponent implements OnInit {
 
   ngOnInit() {
     this.route.params.forEach((urlParameters) => {
-     this.playerId = urlParameters['id'];
-   });
+      this.playerId = urlParameters['id'];
+    });
    
    this.playerToDisplay = this.playerService.getPlayerById(this.playerId);
   }

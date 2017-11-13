@@ -21,13 +21,22 @@ export class PlayerService {
   getPlayerById(playerId: string){
    return this.database.object('players/' + playerId);
  }
- 
- updatePlayer(localUpdatedPlayer){
-    let playerEntryInFirebase = this.getPlayerById(localUpdatedPlayer.$key);
-    playerEntryInFirebase.update({name: localUpdatedPlayer.name,
-                                country: localUpdatedPlayer.country,
-                                rating: localUpdatedPlayer.rating});
-
+  
+  deletePlayer(localPlayerToDelete){
+    var playerEntryInFirebase = this.getPlayerById(localPlayerToDelete.$key);
+    playerEntryInFirebase.remove();
   }
-
+  
+  updatePlayer(localUpdatedPlayer){
+    let playerEntryInFirebase = this.getPlayerById(localUpdatedPlayer.$key);
+    if (localUpdatedPlayer.name != null) {
+      playerEntryInFirebase.update({name: localUpdatedPlayer.name});
+    } 
+    if (localUpdatedPlayer.country != null) {
+      playerEntryInFirebase.update({country: localUpdatedPlayer.country});
+    } 
+    if (localUpdatedPlayer.rating != null) {
+      playerEntryInFirebase.update({rating: localUpdatedPlayer.rating});
+    } 
+  }
 }
