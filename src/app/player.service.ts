@@ -20,15 +20,16 @@ export class PlayerService {
   
   getPlayerById(playerId: string){
    return this.database.object('players/' + playerId);
- }
+  }
   
   deletePlayer(localPlayerToDelete){
     var playerEntryInFirebase = this.getPlayerById(localPlayerToDelete.$key);
     playerEntryInFirebase.remove();
   }
   
-  updatePlayer(localUpdatedPlayer){
-    let playerEntryInFirebase = this.getPlayerById(localUpdatedPlayer.$key);
+  updatePlayer(localUpdatedPlayer, playerId){
+    let playerEntryInFirebase = this.getPlayerById(playerId);
+    console.log(playerId)
     if (localUpdatedPlayer.name != null) {
       playerEntryInFirebase.update({name: localUpdatedPlayer.name});
     } 

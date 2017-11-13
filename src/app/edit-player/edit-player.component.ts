@@ -40,7 +40,8 @@ export class EditPlayerComponent implements OnInit {
   }
   
   beginUpdatingPlayer(updatedPlayer){
-    this.playerService.updatePlayer(updatedPlayer);
+    console.log("inside componenet", this.playerId)
+    this.playerService.updatePlayer(updatedPlayer, this.playerId);
     this.router.navigate(['admin']);
   }
   
