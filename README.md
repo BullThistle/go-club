@@ -1,27 +1,60 @@
-# GoClub
+# Chatty Katty
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.4.9.
+##### _Epicodus Solo Project in Angular_
 
-## Development server
+## About
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+_Go Club is a site which demonstrates crud functionality using angular and firebase_
 
-## Code scaffolding
+![Player Page](https://user-images.githubusercontent.com/13779974/32714726-0f6650e8-c804-11e7-9cd8-19d23e0adc7e.png)
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Building the App or Contributing
 
-## Build
+* Clone this repository
+* Install required dependencies
+  ```
+  npm install
+  ```
+* Create a [Firebase Database](https://firebase.google.com/)
+* Set your database's ```".read"``` and ```".write"``` rules to ```"true"```
+* Create a ```/src/app/api-keys.ts``` file. Add the following information from your Firebase project to the file:
+  ```typescript
+  export var masterFirebaseConfig = {
+    apiKey: "[YOUR-FIREBASE-API-KEY]",
+    authDomain: "[YOUR-FIREBASE-NAME].firebaseapp.com",
+    databaseURL: "[YOUR-FIREBASE-URL]",
+    projectId: "[YOUR-FIREBASE-ID]",
+    storageBucket: "",
+    messagingSenderId: "[YOUR-SENDER-ID]"
+  };
+  ```
+  
+  * To run local server
+  ```
+  $ ng serve
+  ```
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
+## Support and Contact Details
 
-## Running unit tests
+Please contact [Rafael Furry](rfurry@gmail.com) with questions or comments.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-## Running end-to-end tests
+## Technologies Used
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+* [JavaScript](https://www.javascript.com/)
+* [Angular](https://angular.io/)
+* [Firebase](https://firebase.google.com/)
+* [Clarity](https://vmware.github.io/clarity/)
 
-## Further help
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+## Contributors
+
+| [<img alt="Rafa" src="https://avatars0.githubusercontent.com/u/13779974?s=460&v=4" width="117">](https://github.com/bullthistle) |
+|:---:|
+|[Rafa](https://github.com/bullthistle)
+
+### License
+
+Copyright (c) 2017 **Rafael Furry**
+
+*This software is licensed under the MIT license.*
