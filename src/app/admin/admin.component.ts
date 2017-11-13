@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Player } from '../player.model';
 import { PlayerService } from '../player.service';
+import { Router } from '@angular/router';
+import { FirebaseListObservable } from 'angularfire2/database';
 
 @Component({
   selector: 'app-admin',
@@ -10,9 +12,12 @@ import { PlayerService } from '../player.service';
 })
 export class AdminComponent implements OnInit {
 
-  constructor(private playerService: PlayerService) { }
+  constructor(private router: Router, private playerService: PlayerService) { }
+  players: FirebaseListObservable<any[]>;
+  currentRoute: string = this.router.url;
 
   ngOnInit() {
+    this.players = this.playerService.getPlayers(); 
   }
 
   submitForm(name: string, country: string, rating: number) {

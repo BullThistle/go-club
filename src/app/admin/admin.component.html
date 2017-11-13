@@ -11,21 +11,19 @@
         </div>
         <div class="form-group">
             <label>Player Ranking:</label>
-            <textarea #newRanking placeholder="Enter Enter Player Ranking" rows="5"></textarea>
+            <input #newRanking type="text" placeholder="Enter Enter Player Ranking" size="20">
         </div>
         <button (click)="submitForm(newPlayer.value, newCountry.value, newRanking.value); newPlayer.value=''; newCountry.value=''; newRanking.value=''" class="btn btn-primary">Add</button>
     </section>
 </form>
 
 <clr-datagrid>
-    <clr-dg-column [clrDgField]="'name'">Name</clr-dg-column>
-    <clr-dg-column [clrDgField]="'Country'">Country</clr-dg-column>
-    <clr-dg-column [clrDgField]="'Ranking'">Ranking</clr-dg-column>
-    
+    <clr-dg-column [clrDgField]="'name'">Player</clr-dg-column>
+    <clr-dg-column [clrDgField]="'rating'">Ranking</clr-dg-column>
+    <clr-dg-column [clrDgField]="'country'">Country</clr-dg-column>
     <clr-dg-row *clrDgItems="let player of players | async">
         <clr-dg-cell>{{player.name}}</clr-dg-cell>
-        <clr-dg-cell>{{player.country}}</clr-dg-cell>
-        <clr-dg-cell>{{player.ranking}}<button class="btn btn-primary right"
-         (click)="goToEditPage(player)">Edit</button></clr-dg-cell>
+        <clr-dg-cell>{{player.rating}}</clr-dg-cell>
+        <clr-dg-cell>{{player.country}}<button class="btn btn-primary right" (click)="goToDetailPage(player)">View</button></clr-dg-cell>
     </clr-dg-row>
 </clr-datagrid>

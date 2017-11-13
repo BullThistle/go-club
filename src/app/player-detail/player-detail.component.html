@@ -1,5 +1,26 @@
-<div>
-  <h3>{{(playerToDisplay | async).name}}</h3>
-  <h4>{{(playerToDisplay | async).country}}</h4>
-  <p>{{(playerToDisplay | async).rating}}</p>
+<div class="row">
+  <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
+    <div class="card">
+      <div class="card-header">
+          Player Detail
+      </div>
+      <div class="card-block">
+        <div class="card-media-block">
+          <div class="card-media-description">
+            <span class="card-media-title">
+              Name: {{(playerToDisplay | async).name}}
+            </span>
+            <span class="card-media-text">
+              Ranking: {{(playerToDisplay | async).country}}
+            </span>
+            <span class="card-media-text">
+              Country: {{(playerToDisplay | async).country}}
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
+<br>
+<button class="btn btn-primary" (click)="goToPlayersPage()">Back</button>

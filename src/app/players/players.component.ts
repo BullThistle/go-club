@@ -22,7 +22,7 @@ export class PlayersComponent implements OnInit {
   }
 
   goToDetailPage(clickedPlayer) {
-    this.router.navigate(['players', clickedPlayer.$key]);
+    this.router.navigate(['player', clickedPlayer.$key]);
   }
 
 }

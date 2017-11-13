@@ -1,7 +1,19 @@
 <h2>Players</h2>
 
-<div *ngFor="let player of players | async" (click)="goToDetailPage(player)" class="panel panel-default">
+<!-- <div *ngFor="let player of players | async" (click)="goToDetailPage(player)" class="panel panel-default">
   <div class="panel-body">
     <h3><em>{{player.name}}</em> from {{player.country}}</h3>
   </div>
 </div>
+ -->
+
+<clr-datagrid>
+    <clr-dg-column [clrDgField]="'name'">Player</clr-dg-column>
+    <clr-dg-column [clrDgField]="'rating'">Ranking</clr-dg-column>
+    <clr-dg-column [clrDgField]="'country'">Country</clr-dg-column>
+    <clr-dg-row *clrDgItems="let player of players | async">
+        <clr-dg-cell>{{player.name}}</clr-dg-cell>
+        <clr-dg-cell>{{player.rating}}</clr-dg-cell>
+        <clr-dg-cell>{{player.country}}<button class="btn btn-primary right" (click)="goToDetailPage(player)">View</button></clr-dg-cell>
+    </clr-dg-row>
+</clr-datagrid>
