@@ -1,4 +1,4 @@
-# Chatty Katty
+# Go Club
 
 ##### _Epicodus Solo Project in Angular_
 
